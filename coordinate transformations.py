@@ -5,6 +5,10 @@ def rect(r, theta):
 
     returns tuple; (float, float); (x,y)
     """
+    # r ≥ 0,
+    # 0° ≤ θ ≤ 180° (π rad),
+    # 0° ≤ φ < 360° (2π rad).
+    
     x = r * math.cos(math.radians(theta))
     y = r * math.sin(math.radians(theta))
     return x,y
