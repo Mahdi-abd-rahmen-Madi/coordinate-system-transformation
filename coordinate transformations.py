@@ -1,5 +1,5 @@
 import math
-# Function rect allow transformation from polar equation as input to float x,y 
+# Function rect allow transformation from polar equation as input to x,y (float) 
 def rect(r, theta):
     """ theta in degrees returns tuple; (float, float); (x,y) """
     """ r ≥ 0 , 0° ≤ θ ≤ 180° (π rad) ,  0° ≤ φ < 360° (2π rad) """
@@ -23,11 +23,13 @@ class Point(object):
             self.c_rect(r, theta)
         else:
             raise ValueError('Must specify x and y or r and theta')
+    # f = function that takes x,y and convert it into polar equation
     def c_polar(self, x, y, f = polar):
         self._x = x
         self._y = y
         self._r, self._theta = f(self._x, self._y)
         self._theta_radians = math.radians(self._theta)
+    # f = function that convert polar equation to x,y (float) 
     def c_rect(self, r, theta, f = rect):
         """ theta in degrees """
         self._r = r
