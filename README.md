@@ -1,2 +1,3 @@
 # coordinate-system-transformation
-This is a university mini project for converting geographic coordinates to projected coordinates and to be specific to Universal Mercator transverse UTM 32N
+This is an academic mini project for converting geographic coordinates to projected coordinates system UTM Universal Mercator transverse 
+This folder cotains both simple and intricate methods 
