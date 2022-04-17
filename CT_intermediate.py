@@ -16,13 +16,13 @@ def latlon_to_xyz(lat,lon):
     r = 6371 # https://en.wikipedia.org/wiki/Earth_radius
     theta = math.pi/2 - math.radians(lat) 
     phi = math.radians(lon)
-    x = r * math.sin(theta) * math.cos(phi) # bronstein (3.381a)
-    y = r * math.sin(theta) * math.sin(phi)
-    z = r * math.cos(theta)
+    x = r * math.cos(theta) * math.cos(phi) # bronstein (3.381a) # the x-axis goes through long,lat (0,0), so longitude 0 meets the equator
+    y = r * math.sin(theta) * math.cos(phi) # the y-axis goes through (0,90)
+    z = r * math.sin(theta) # and the z-axis goes through the poles.
     return [x,y,z]
 
 def xyz_to_latlon (x,y,z):
-    """Convert cartesian to angular lat/lon coordiantes"""
+    """Convert cartesian to angular lat/lon coordinates"""
     r = math.sqrt(x**2 + y**2 + z**2)
     theta = math.asin(z/r) # https://stackoverflow.com/a/1185413/4933053
     phi = math.atan2(y,x)
