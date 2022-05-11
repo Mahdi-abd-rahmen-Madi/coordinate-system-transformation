@@ -8,11 +8,9 @@ def deg_to_arc(deg):
     return float(deg)*6371*1000 * math.pi/180
 
 def latlon_to_xyz(lat,lon):
-    """Convert angluar to cartesian coordiantes
-
+    """Convert angluar to cartesian coordiantes 
     latitude is the 90deg - zenith angle in range [-90;90]
-    lonitude is the azimuthal angle in range [-180;180] 
-    """
+    lonitude is the azimuthal angle in range [-180;180] """
     r = 6371 # https://en.wikipedia.org/wiki/Earth_radius
     theta = math.pi/2 - math.radians(lat) 
     phi = math.radians(lon)
